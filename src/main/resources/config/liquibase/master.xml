@@ -14,7 +14,14 @@
     <property name="uuidType" value="uuid" dbms="h2, postgresql"/>
 
     <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200628101336_added_entity_AnneeScolaire.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200628101436_added_entity_Niveau.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200628101536_added_entity_Eleve.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200628101636_added_entity_Scolarite.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200628101736_added_entity_Inscription.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="config/liquibase/changelog/20200628101636_added_entity_constraints_Scolarite.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200628101736_added_entity_constraints_Inscription.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
     <!-- jhipster-needle-liquibase-add-incremental-changelog - JHipster will add incremental liquibase changelogs here -->
 </databaseChangeLog>

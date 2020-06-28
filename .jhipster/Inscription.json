@@ -1,0 +1,50 @@
+{
+  "name": "Inscription",
+  "fields": [
+    {
+      "fieldName": "dateInscription",
+      "fieldType": "LocalDate",
+      "fieldValidateRules": [
+        "required"
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "eleve",
+      "otherEntityRelationshipName": "inscriptions",
+      "relationshipValidateRules": "required",
+      "relationshipName": "eleve",
+      "otherEntityField": "nomPrenom"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "niveau",
+      "otherEntityRelationshipName": "inscriptions",
+      "relationshipValidateRules": "required",
+      "relationshipName": "niveau",
+      "otherEntityField": "intitule"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "anneeScolaire",
+      "otherEntityRelationshipName": "inscriptions",
+      "relationshipValidateRules": "required",
+      "relationshipName": "anneeScolaire",
+      "otherEntityField": "annee"
+    }
+  ],
+  "changelogDate": "20200628101736",
+  "entityTableName": "inscription",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "ApplicationScolarite",
+  "applications": "*",
+  "microserviceName": "ApplicationScolarite"
+}
