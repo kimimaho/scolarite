@@ -1,0 +1,38 @@
+{
+  "name": "AnneeScolaire",
+  "fields": [
+    {
+      "fieldName": "annee",
+      "fieldType": "Integer",
+      "fieldValidateRules": [
+        "required"
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "inscription",
+      "otherEntityRelationshipName": "anneeScolaire",
+      "relationshipName": "inscriptions"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "scolarite",
+      "otherEntityRelationshipName": "anneeScolaire",
+      "relationshipName": "scolarite"
+    }
+  ],
+  "changelogDate": "20200628103921",
+  "entityTableName": "annee_scolaire",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "ApplicationScolarite",
+  "applications": "*",
+  "microserviceName": "ApplicationScolarite"
+}

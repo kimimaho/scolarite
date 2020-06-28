@@ -1,0 +1,48 @@
+entity AnneeScolaire {
+	annee Integer required
+}
+
+entity Niveau {
+	intitule String required
+}
+
+ 
+entity Eleve {
+	matricule String,
+	nomPrenom String required,
+	dateNaissance LocalDate required,
+	sexe Sexe required
+}
+
+entity Scolarite {
+	effectif Integer required,
+    scolarite Float required
+}
+ 
+entity Inscription {
+	dateInscription LocalDate required
+}
+
+enum Sexe {
+    MASCULIN, FEMININ
+}
+
+relationship OneToMany {
+	Eleve{inscriptions} to Inscription{eleve(nomPrenom) required},
+	Niveau{inscriptions} to Inscription{niveau(intitule) required},
+    AnneeScolaire{inscriptions} to Inscription{anneeScolaire(annee) required},
+    Niveau{scolarite} to Scolarite{niveau(intitule) required},
+    AnneeScolaire{scolarite} to Scolarite{anneeScolaire(annee) required}
+}
+
+ // Set pagination options 
+paginate Eleve, Niveau, AnneeScolaire, Inscription, Scolarite with pagination
+
+// Use Data Transfert Objects (DTO)
+// dto * with mapstruct
+
+// Set service options to all except few
+service AnneeScolaire, Niveau, Inscription with serviceImpl
+
+// Set an angular suffix
+// angularSuffix * with mySuffix
